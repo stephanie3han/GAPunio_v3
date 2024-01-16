@@ -46,7 +46,7 @@ We provide you with a set of tools and two different operating systems for GAP:
 
 ## Getting started with the GAP SDK
 
-### Ubuntu 20.04
+### Ubuntu 22.04
 
 #### OS Requirements installation
 
@@ -87,7 +87,7 @@ sudo apt-get install -y \
 
 #### Python Package Management
 
-SDK and some tools are all based on Python3 (version > 3.8), you can use following command to set your default python to python3.  
+SDK and some tools are all based on Python3 (version =3.10.12), you can use following command to set your default python to python3.  
 
 ```bash
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
@@ -207,7 +207,7 @@ Then, depends on what you need, build the SDK accordingly
 make <target>
 ```
 #### Install OpenOCD Rules 
-
+（just make openocd.all）
 * Copy openocd udev rules and reload udev rules
 
 ```bash
