@@ -1,0 +1,54 @@
+Building GAP8 mode with 8 bit quantization
+script model/nntool_script
+GEN ... /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Generators/CNN_Generator_Util.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Generators/CNN_Copy_Generators.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Generators/SSD_Generators.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/Generators/BilinearResizes/ResizeGenerator.c  /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/DSP_Generators/DSP_Generators.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Generators_SQ8/CNN_Generators_SQ8.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Generators_SQ8/RNN_Generators_SQ8.c
+APP_SRCS... mnist.c BUILD_MODEL_SQ8BIT/mnistKernels.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/libs/gap_lib/img_io/ImgIO.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries/SSD_BasicKernels.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/Generators/BilinearResizes/ResizeBasicKernels.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries/CNN_Copy.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries_SQ8/CNN_AT_Misc.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/DSP_Libraries/CmplxFunctions.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/DSP_Libraries/MatMulDSP.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/DSP_Libraries/FFT_Library.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/DSP_Libraries/MfccBasicKernels.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/DSP_Libraries/PreProcessing.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/DSP_Libraries/math_funcs.c  /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/DSP_Libraries/pulp_dsp/plp_cos_f32s_xpulpv2.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/DSP_Libraries/pulp_dsp/plp_sin_f32s_xpulpv2.c  /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/DSP_Libraries/pulp_dsp/plp_common_tables.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries_SQ8/CNN_Activation_SQ8.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries_SQ8/CNN_Activation_HWC_SQ8.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries_SQ8/CNN_Bias_Linear_SQ8.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries_SQ8/CNN_Conv_SQ8.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries_SQ8/CNN_MatMul_Conv_SQ8.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries_SQ8/CNN_Pooling_SQ8.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries_SQ8/CNN_Conv_DW_SQ8.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries_SQ8/CNN_Conv_DW_Red_SQ8.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries_SQ8/CNN_MatAlgebra_SQ8.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries_SQ8/CNN_SoftMax_SQ8.c /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries_SQ8/RNN_SQ8.c
+APP_CFLAGS... -march=rv32imcxgap8 -g -O3 -mno-memcpy -fno-tree-loop-distribute-patterns -I. -I/home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/libs/gap_lib/include -I/home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/Emulation -I/home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/Autotiler -I/home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/Generators/BilinearResizes -I/home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries -I/home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/DSP_Libraries -I/home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries_fp16 -I/home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/tools/autotiler_v3/CNN_Libraries_SQ8 -IBUILD_MODEL_SQ8BIT -DPERF -DAT_MODEL_PREFIX=mnist -DAT_INPUT_HEIGHT=28 -DAT_INPUT_WIDTH=28 -DAT_INPUT_COLORS=1 -DSTACK_SIZE=4096 -DSLAVE_STACK_SIZE=1024 -DAT_IMAGE=/home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/examples/gap8/nn/nntool/mnist_rnn/samples/5223_5.pgm
+mkdir BUILD_MODEL_SQ8BIT
+cp model/mnist.tflite BUILD_MODEL_SQ8BIT/mnist.tflite
+echo "GENERATING NNTOOL STATE FILE"
+GENERATING NNTOOL STATE FILE
+nntool -s model/nntool_script BUILD_MODEL_SQ8BIT/mnist.tflite 
+settings - set log level to INFO
+log_level - was: 'INFO'
+now: 'INFO'
+open - opening graph file BUILD_MODEL_SQ8BIT/mnist.tflite load_quantization = False
+tflite - Importing TFLITE model version 3
+reshape - node RESHAPE_0_0 moved batch dimension for axis 0 to axis 1
+nngraph - update graph dimensions
+nngraph - update graph dimensions
+nngraph - update graph dimensions
+nngraph - update graph dimensions
+debug - was: False
+now: True
+freeze - node input_1 is frozen
+freeze - node output_1 is frozen
+adjust_order - adding transposes to correct tensor order for AT kernels
+eliminate_transposes - no transposes to eliminate found
+nngraph - update graph dimensions
+nngraph - update graph dimensions
+eliminate_transposes - no further transpose sequences found
+nngraph - adjusted order
+nngraph - update graph dimensions
+matcher - ++ fusion partial_split modified graph
+matcher - ++ fusion scaled_match_group modified graph
+input_norm_func - was: ''
+now: 'x: x/255'
+set option RNN_USE_HARDACT on node UNIDIRECTIONAL_SEQUENCE_LSTM_0_1 to 1
+set option RNN_USE_HARDACT on node UNIDIRECTIONAL_SEQUENCE_LSTM_0_2 to 1
+nngraph - update graph dimensions
+inserted image formatter after node input_1 withformat bw8 and normalization shift_int8
+graph_reorder_constant_in - was: True
+now: True
+graph_produce_node_names - was: False
+now: True
+graph_produce_operinfos - was: False
+now: True
+graph_monitor_cycles - was: False
+now: True
+l3_ram_device - was: 'AT_MEM_L3_HRAM'
+now: 'AT_MEM_L3_DEFAULTRAM'
+l3_flash_device - was: 'AT_MEM_L3_HFLASH'
+now: 'AT_MEM_L3_DEFAULTFLASH'
+echo "GENERATING AUTOTILER MODEL"
+GENERATING AUTOTILER MODEL
+nntool -g -M BUILD_MODEL_SQ8BIT -m mnistModel.c -T BUILD_MODEL_SQ8BIT/tensors -H mnistInfo.h  BUILD_MODEL_SQ8BIT/mnist.json

@@ -1305,7 +1305,7 @@ int main()
             #endif
 
             start_time = rt_time_get_us();
-            rt_cluster_call(NULL, CID, (void *) benchmarks, &Arg, NULL, 0, 0, 8, NULL);
+            rt_cluster_call(NULL, CID, (void *) benchmarks, &Arg, NULL, 0, 0, 8, NULL);  ///////////0,0,8,NILL
             end_time = rt_time_get_us();
             
             tot_time = end_time-start_time;

@@ -42,9 +42,9 @@ void test_uart_input(void)
 
     /* Init & open uart. */
     pi_uart_conf_init(&conf);
-    conf.enable_tx = 1;
+    conf.enable_tx = 1;      //active UART port
     conf.enable_rx = 1;
-    conf.baudrate_bps = 115200;
+    conf.baudrate_bps = 115200;  
     pi_open_from_conf(&uart, &conf);
     if (pi_uart_open(&uart))
     {

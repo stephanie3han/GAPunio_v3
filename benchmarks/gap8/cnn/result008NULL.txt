@@ -1,0 +1,58 @@
+/* ----------------- result 0,0,8,NULL ---------------------*/
+
+Open On-Chip Debugger 0.10.0+dev-gb84d97ec4 (2023-10-20-17:35)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+debug_level: 0
+
+DEPRECATED! use 'adapter driver' not 'interface'
+DEPRECATED! use 'adapter speed' not 'adapter_khz'
+DEPRECATED! use 'adapter driver' not 'interface'
+TARGET create
+GAP8 INIT TARGET
+GAP8 examine target
+Init jtag
+Initialising GAP8 JTAG TAP
+--------------------------
+begining flash session (hyperflash)
+--------------------------
+load flasher to L2 memory
+Loading binary through JTAG
+[Flahser]: Hyperflash flasher is ready
+Instruct flasher to begin flash per se
+device struct address is 470047192
+going to wait on addr GAP_RDY
+loading image to flash - addr 469784844 - copied 90144 / 90144 Bytes - 100.00 %[Flahser]: flasher is done
+flasher is done, exiting
+--------------------------
+flasher is done!
+--------------------------
+--------------------------
+Reset CONFREG to 0
+--------------------------
+GAP8 examine target
+RESET: jtag boot mode=3
+DEPRECATED! use 'adapter [de]assert' not 'jtag_reset'
+gapy --target=gapuino_v3  gen_flash_image --boot-loader /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/benchmarks/gap8/cnn/BUILD/GAP8_V3/GCC_RISCV_PULPOS/cnn  -o /home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/benchmarks/gap8/cnn/BUILD/GAP8_V3/GCC_RISCV_PULPOS/flash.img 
+gapy --target=gapuino_v3 --platform=board --work-dir=/home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/benchmarks/gap8/cnn/BUILD/GAP8_V3/GCC_RISCV_PULPOS      run --exec-prepare --exec --binary=/home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/benchmarks/gap8/cnn/BUILD/GAP8_V3/GCC_RISCV_PULPOS/cnn  
+Launching execution with command:
+gap8-openocd -d0 -c 'gdb_port disabled; telnet_port disabled; tcl_port disabled' -f interface/ftdi/gapuino_ftdi.cfg -f target/gap8revb.tcl -f tcl/jtag_boot_entry.tcl -c 'gap8_jtag_load_binary_and_start "/home/hanxia/gap_riscv_toolchain_ubuntu/gap_sdk/benchmarks/gap8/cnn/BUILD/GAP8_V3/GCC_RISCV_PULPOS/cnn" elf 0x1c000080'
+Open On-Chip Debugger 0.10.0+dev-gb84d97ec4 (2023-10-20-17:35)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+debug_level: 0
+
+DEPRECATED! use 'adapter driver' not 'interface'
+DEPRECATED! use 'adapter speed' not 'adapter_khz'
+DEPRECATED! use 'adapter driver' not 'interface'
+TARGET create
+0
+GAP8 INIT TARGET
+GAP8 examine target
+Init jtag
+Initialising GAP8 JTAG TAP
+Loading binary through JTAG
+
+
